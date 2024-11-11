@@ -1,4 +1,5 @@
-
+import java.util.TreeSet;
+import java.util.*;
 
 public class InsertPosition {
 
@@ -14,7 +15,37 @@ public class InsertPosition {
      * @param target the number that would hypothetically be inserted.
      * @return return the index that a number should be inserted into a sorted array.
      */
-    public int searchInsert(int[] nums, int target) {
-        return -1;
+    public static void main(String[] args){
+
+
     }
+
+    public int searchInsert(int[] nums, int target) {
+        int i = 0;
+        int k = nums.length;
+        int location = 0;
+       TreeSet<Integer> ts = new TreeSet<>();
+        for (i=0;i<k;i++){
+            ts.add(nums[i]);
+    }
+   // ts.headSet(30);
+    
+    if (k>1){
+    location = ts.lower(target);
+    }
+    for (i=0; i<k;i++){
+         if (nums[i]==location){
+            break;
+         }
+    }
+    int actualLocation = i + 1;
+
+    
+    if (k==1){
+       actualLocation=0;
+
+    }
+    
+    return actualLocation;
+}
 }
